@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --font-reddit-sans: "Reddit Sans", sans-serif;
+  --text-default: initial;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 0.9375rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.75rem;
+  --text-4xl: 2rem;
+  --text-5xl: 2.5rem;
+  --text-6xl: 2.875rem;
+  --text-7xl: 3.25rem;
+
+  --leading-default: initial;
+  --leading-tight: 1.2;
+  --leading-snug: 1.3;
+  --leading-normal: 1.4;
+
+  --radius-xl: 0.625rem;
+
+  --color-default: initial;
+
+  --color-white: hsl(0, 0%, 100%);
+
+  --color-neutral-200: hsl(216, 5%, 81%);
+  --color-neutral-300: hsl(240, 20%, 65%);
+  --color-neutral-600: hsl(240, 17%, 41%);
+  --color-neutral-900: hsl(240, 40%, 22%);
+
+  --color-blue-50: hsl(226, 72%, 97%);
+  --color-blue-100: hsl(226, 72%, 93%);
+  --color-blue-200: hsl(225, 75%, 87%);
+  --color-blue-300: hsl(207, 100%, 77%);
+  --color-blue-600: hsl(228, 67%, 57%);
+  --color-blue-700: hsl(228, 67%, 50%);
+
+  --color-red-300: hsl(1, 100%, 80%);
+  --color-red-700: hsl(355, 100%, 45%);
+
+  --color-indigo-200: hsl(245, 100%, 85%);
+  --color-green-300: hsl(115, 68%, 70%);
+  --color-amber-300: hsl(35, 100%, 74%);
+
+  --color-gradient-start: hsl(240, 100%, 98%);
+  --color-gradient-end: hsl(240, 100%, 94%);
+
+  --shadow-main: 0 8px 16px hsla(207, 12%, 14%, 0.08);
+}
+
+body {
+  background-color: var(--color-gradient-start);
+  font-family: var(--font-reddit-sans);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.nav {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 15px;
+}
+
+.nav h1 {
+  color: var(--color-neutral-900);
+}
+
+.nav-icon img {
+  margin-left: 250px;
+  margin-top: 20px;
+  height: auto;
+  width: 35px;
+}
+
+.logo,
+.gitLogo {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.logo:hover,
+.gitLogo:hover {
+  transform: scale(1.5);
+}
+
+main {
+  padding-top: 50px;
+}
+
+.welcoming {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.welcoming h1 {
+  font-weight: 900;
+  font-size: var(--text-6xl);
+  margin-top: 1px;
+}
+
+.welcoming h2 {
+  font-weight: 600;
+  font-size: var(--text-4xl);
+  color: var(--color-blue-600);
+}
+
+.welcoming .date {
+  font-weight: 600;
+  margin-top: 1px;
+  color: var(--color-neutral-300);
+  font-size: var(--text-xl);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.moodBtn {
+  font-size: var(--text-lg);
+  padding: 15px;
+  border-radius: 8px;
+  border: 0;
+  background-color: var(--color-blue-700);
+  color: #ffffff;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.moodBtn:hover {
+  scale: 1.05;
+}
+
+.moodSelection {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.moodIcon {
+  font-size: 50px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  background-color: inherit;
+  border: none;
+}
+
+.moodIcon.active {
+  outline: 1px solid #3b82f6; /* borde azul */
+  border-radius: 50%; /* redondeado */
+  background-color: #e0f2fe; /* azul clarito de fondo */
+  transform: scale(1.1); /* un poquito más grande */
+}
+
+.moodIcon:hover {
+  scale: 1.15;
+}
+
+.moodDescriptionContainer {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.moodDescriptionContainer textarea {
+  box-sizing: border-box;
+  height: 120px;
+  width: 450px;
+  border: 1px solid var(--color-blue-600);
+  border-radius: 4px;
+  background-color: var(--color-white);
+  font: var(--text-default);
+  resize: none;
+}
+
+.stats {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.stats h3 {
+  margin: 0;
+  font-weight: bold;
+}
+
+#moodChart {
+  max-width: 600px;
+  width: 100%;
+}
+
+.welcoming h2,
+.welcoming h1,
+.welcoming #date,
+.nav img,
+.nav .brand,
+.nav-icon img,
+.moodBtn,
+.moodDescriptionContainer,
+.moodSelection {
+  display: none;
+}

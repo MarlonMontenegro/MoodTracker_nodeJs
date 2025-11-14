@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="assets/icon.png" />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- Librerías externas -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"
+      defer
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+
+    <!-- Tu script -->
+    <script src="./js/script.js" defer></script>
+    <title>MoodTracker - Nodejs</title>
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        <img src="./assets/icon.png" alt="logo" class="logo" />
+        <h1 class="brand">Mood tracker</h1>
+      </div>
+      <div class="nav-icon">
+        <a
+          href="https://github.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="git"
+        >
+          <img
+            src="./assets/github-mark.png"
+            alt="github-logo"
+            class="gitLogo"
+          />
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <div class="welcoming">
+        <h2>Hola, <span id="name">extraño</span>!</h2>
+        <h1>¿Cómo te sientes el día de hoy?</h1>
+        <p id="date" class="date"></p>
+      </div>
+
+      <!-- Selección de ánimo -->
+      <div class="moodSelection">
+        <button
+          type="button"
+          class="moodIcon"
+          data-mood="Feliz"
+          aria-label="Feliz"
+        >
+          😄
+        </button>
+        <button
+          type="button"
+          class="moodIcon"
+          data-mood="Triste"
+          aria-label="Triste"
+        >
+          😢
+        </button>
+        <button
+          type="button"
+          class="moodIcon"
+          data-mood="Enojado"
+          aria-label="Enojado"
+        >
+          😡
+        </button>
+        <button
+          type="button"
+          class="moodIcon"
+          data-mood="Neutral"
+          aria-label="Neutral"
+        >
+          😐
+        </button>
+      </div>
+
+      <!-- Descripción -->
+      <div class="moodDescriptionContainer">
+        <textarea
+          id="comment"
+          placeholder="Escribe un comentario (opcional)"
+        ></textarea>
+      </div>
+
+      <!-- Botón de guardar -->
+      <div class="btn-container">
+        <button class="moodBtn" id="saveMoodBtn" type="button">
+          Anotar cómo te sientes hoy
+        </button>
+      </div>
+      <section class="stats" id="stats">
+        <h3>Historial</h3>
+        <canvas id="moodChart" height="180"></canvas>
+      </section>
+    </main>
+  </body>
+</html>
